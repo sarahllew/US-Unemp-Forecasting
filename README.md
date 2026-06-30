@@ -1,7 +1,6 @@
-Forecasting US Unemployment rate for 2024, using time series analysis methods such as SARIMA and spectral density analysis.
-Dataset from US Bureau of Labor Statistics, main goal: forecasting trends and uncovering seasonality of data post pandemic. 
+Main goal of project: forecasting trends and uncovering seasonality of data post pandemic. 
 
-# Job Recommendation System for Data Science UCSB
+# Forecasting Future U.S. Unemployement Rate
 ## Introduction
 Unemployment rate is a significant measure of economic health as changes in rate can provide insights on changes in the labor market and socio-economic conditions. This project focuses on understanding and predicting unemployment rate in the United States from 1948 to 2023 using time series analysis. By having a better understanding on past unemployment trends in relation to changes over time and external factors, we can uncover long term trends that can be found about the U.S. labor market. Time series analysis techniques can provide further understanding of variations of unemployment rate, and forecasting can aid those such as economists or businesses in planning.
 
