@@ -23,7 +23,7 @@ To clean the dataset, I
 - analyzed ACF and PACF plots
 To understand the `ACF` or `PACF` plots, we will analyze significant points and determine if there is any seasonality present. Specifically, the ACF plot will reveal whether or not the model estimated could be a moving average MA(q) model; the PACF plot indicates if the model can be `autoregressive AR(p)`. An autoregressive (AR) model will incorporate past data points to predict within the same time series. The `moving average (MA)` model is a smoothing technique that applies the averages of points in the time series to highlight long term trends. The diagnostic plots to consider are: `standardized residuals`, `ACF of residuals`, `Normal Q-Q` plot of standardized residuals, and p-values for the `Ljung Box` Statistic. To analyze these, we will first consider the standardized residuals and determine if it appears stationary. As for the ACF of residuals, we will determine if there are any significant spikes. The  `Q-Q plot` will reveal if the residuals follow a normal distribution if they are along the line. The p-values for Ljung Box Statistic will test whether the residuals are independent or have an auto correlated relationship.
 
-## Results: 
+### Results: 
 Based on the diagnostic plots, I selected the SARIMA(1,0,1)x(1,0,1)[12] model.
 For this SARIMA(1,0,1)x(1,0,1)[12] model, there are no apparent patterns in the data and it is relatively stationary, with the exception of 2020. This makes sense as it corresponds to the recession during the COVID-19 pandemic, so the unemployment rate peaks significantly. The ACF plot tails off, and there are not any significant points of residuals. We can observe that the Q-Q plot appears to be relatively normal as it follows the straight line. There are outliers in the beginning of the plot and a significant outlier at the highest theoretical quantile, but it still reasonably follows a normal distribution. As for the p-values for the Ljung-Box statistic, there are two lower p-values that falls close to being statistically significant at earlier lags. Overall, as the lags increase, the p-values increase as well and are greater than 0.05. This indicates the values are not autocorrelated.
 
@@ -32,7 +32,7 @@ Now we can use the estimated model on the original data and forecast the next 12
 
 To view forecasted points, check out my full report linked below!
 
-## Method 2: Spectral Analysis 
+### Method 2: Spectral Analysis 
 
 Unemployment follows a cycle related to business and fluctuations in the economy. As an economy reaches a peak or experiences growth, the rate of cyclical unemployment will be low. 
 
@@ -46,16 +46,7 @@ From the top three frequencies, we can see that Frequency A is 0.0625 with a per
 
 Overall, the peak at $1\Delta$ corresponds to a strong periodic component that repeats every 12 months (yearly) at a spectrum of 1.6882. This is reasonable as unemployment rates may follow an annual cycle as it exhibits some seasonal variation.
 
-## Cosine Similarity & Recommendation ML Model
-Our system implements a **content-based filtering** approach to match students with relevant internships.
-
-1. Cosine Similarity: Quantifies how closely a student’s profile matches a job posting based on TF-IDF vectors
-2. Heuristic Scoring: Factors in skills, experience, and location preferences with different weights
-3. Machine Learning (Random Forest Regressor): Labeled heuristic scores were used as a target variable to train a **Random Forest model**
-Features like `student_id` and `internship_id` were **one-hot encoded**
-The final output ranks internship recommendations for each student, displaying the **top opportunities** based on predicted relevance scores.
-
-## Results & Next Steps 🎯
+## Conclusion & Next Steps 🎯
 
 Through the two methods, SARIMA and Spectral Analysis, we were able to forecast the next 12 months of U.S. Unemployment rate and explore its frequencies. Overall, this project utilized time series analysis through SARIMA and Spectral Analysis to forecast and uncover underlying seasonality in U.S. unemployment rate. These findings have significant implications on future planning in regards to the changing U.S. economy and its employment rates.
 
