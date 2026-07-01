@@ -21,7 +21,16 @@ To clean the dataset, I
 - applied the Box-Jenkins approach
 - plotted time series original data
 - analyzed ACF and PACF plots
-To understand the `ACF` or `PACF` plots, we will analyze significant points and determine if there is any seasonality present. Specifically, the ACF plot will reveal whether or not the model estimated could be a moving average MA(q) model; the PACF plot indicates if the model can be `autoregressive AR(p)`. An autoregressive (AR) model will incorporate past data points to predict within the same time series. The `moving average (MA)` model is a smoothing technique that applies the averages of points in the time series to highlight long term trends. The diagnostic plots to consider are: `standardized residuals`, `ACF of residuals`, `Normal Q-Q` plot of standardized residuals, and p-values for the `Ljung Box` Statistic. To analyze these, we will first consider the standardized residuals and determine if it appears stationary. As for the ACF of residuals, we will determine if there are any significant spikes. The  `Q-Q plot` will reveal if the residuals follow a normal distribution if they are along the line. The p-values for Ljung Box Statistic will test whether the residuals are independent or have an auto correlated relationship.
+- 
+To understand the `ACF` or `PACF` plots, we will analyze significant points and determine if there is any seasonality present.
+
+Specifically, the ACF plot will reveal whether or not the model estimated could be a moving average MA(q) model; the PACF plot indicates if the model can be `autoregressive AR(p)`. An autoregressive (AR) model will incorporate past data points to predict within the same time series. 
+
+The `moving average (MA)` model is a smoothing technique that applies the averages of points in the time series to highlight long term trends. 
+
+The diagnostic plots to consider are: `standardized residuals`, `ACF of residuals`, `Normal Q-Q` plot of standardized residuals, and p-values for the `Ljung Box` Statistic.
+
+To analyze these, we will first consider the standardized residuals and determine if it appears stationary. As for the ACF of residuals, we will determine if there are any significant spikes. The  `Q-Q plot` will reveal if the residuals follow a normal distribution if they are along the line. The p-values for Ljung Box Statistic will test whether the residuals are independent or have an auto correlated relationship.
 
 ### Results: 
 Based on the diagnostic plots, I selected the SARIMA(1,0,1)x(1,0,1)[12] model.
